@@ -1,5 +1,13 @@
 <?php
 
+/** Remove Query strings from Static Resources. */
+function _remove_script_version( $src ){
+    $parts = explode( '?', $src );
+    return $parts[0];
+}
+add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
+
 if(!function_exists('erumasan_setup')):
     function erumasan_setup(){
     require(get_template_directory().'/inc/template-tags.php');
@@ -72,15 +80,15 @@ add_action( 'widgets_init', 'erumasan_widgets_init' );
 
 function erumasan_scripts(){
     wp_enqueue_style('style', get_stylesheet_uri());
-    wp_enqueue_style('tweetcss', get_template_directory_uri() . '/jquery.tweet.css', array(), 'all' );
+    wp_enqueue_style('tweetcss', get_template_directory_uri() . '/tweet.css', array(), 'all' );
     
     wp_deregister_script('jquery');
     wp_deregister_script('jquery-ui-core');
     wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js');
     
+    wp_enqueue_script('twitterfetcher', get_template_directory_uri().'/js/twitterFetcher_v10_min.js');
     wp_enqueue_script('small-menu', get_template_directory_uri().'/js/small-menu.js', array('jquery'), '20120206', true);
-    wp_enqueue_script('twitter', get_template_directory_uri() . '/js/jquery.tweet.js', 'jquery');
-    wp_enqueue_script('custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', true);
+    wp_enqueue_script('jscustom', get_template_directory_uri().'/js/custom.js');
 }
 add_action('wp_enqueue_scripts', 'erumasan_scripts');
 ?>

@@ -1,0 +1,84 @@
+#tweetfeed{
+    font: 1.4rem 'Droid Sans', Helvetica, Arial, sans-serif;
+    color: #444444;    
+}
+
+    #tweetfeed ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow-y: hidden;    
+    }
+        #tweetfeed ul li{
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0.5rem;
+            list-style-type: none;
+            border-bottom: 1px #E8E8E8 solid;
+        }
+
+    .user{}
+        .user a{text-decoration: none;}
+            .user a img{
+                float:left;
+                margin: 0.15rem;
+                border-radius: 4px 4px 4px 4px;
+            }
+            .user a span {}
+
+    .tweet{}
+        .tweet a{text-decoration: none;}
+        .tweet a:hover{text-decoration: underline;}
+
+    .timePosted{
+        font: 1.2rem 'Droid Sans', Helvetica, Arial, sans-serif;
+        float:left;
+        margin-top: 0.5rem; 
+    }
+
+    .interact{
+        float: right;
+        margin-top: 0.5rem;    
+    }
+        .twitter_reply_icon{
+            background: url("images/reply.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+            border: 0 none;
+            display: inline-block;
+            font-size: 0;
+            height: 16px;
+            line-height: 0;
+            overflow: hidden;
+            text-indent: -9999px;
+            width: 16px;
+        }
+        .twitter_reply_icon:hover{
+            background: url("images/reply_hover.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+        .twitter_retweet_icon{
+            background: url("images/retweet.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+            border: 0 none;
+            display: inline-block;
+            font-size: 0;
+            height: 16px;
+            line-height: 0;
+            overflow: hidden;
+            text-indent: -9999px;
+            width: 16px;
+        }
+        .twitter_retweet_icon:hover{
+            background: url("images/retweet_hover.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+        .twitter_fav_icon{
+            background: url("images/favorite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+            border: 0 none;
+            display: inline-block;
+            font-size: 0;
+            height: 16px;
+            line-height: 0;
+            overflow: hidden;
+            text-indent: -9999px;
+            width: 16px;            
+        }
+        .twitter_fav_icon:hover{
+            background: url("images/favorite_hover.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
